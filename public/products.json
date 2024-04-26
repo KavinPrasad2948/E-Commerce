@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "A Wolf So Grim And Mangy",
+      "description": "A Land of Darkness drowns in despair. Its called My Office.",
+      "price": 1365,
+      "category": "fantasy",
+      "author": "Caroline Noe",
+      "thumbnail": "https://m.media-amazon.com/images/I/71UWrA66paL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Book of Doors",
+      "description": "Joyful, exuberant, and crackling with adventure. STUART TURTON A clever and beautiful novel about the power of .",
+      "price": 552,
+      "category": "fantasy",
+      "author": "Sigrid Nunez",
+      "thumbnail": "https://m.media-amazon.com/images/I/91ZjX0neGcL._SY342_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Friend",
+      "description": "A moving story of love, friendship, grief, healing, and the magical bond between a woman and her dog.WINNER OF THE 2018 NATIONAL BOOK AWARD * A NEW YORK TIMES BESTSELLER * SHORTLISTED FOR THE 2020 INTERNATIONAL DUBLIN LITERARY AWARD'A true delight...",
+      "price": 175,
+      "category": "fiction",
+      "author": "Sigrid Nunez",
+      "thumbnail": "https://m.media-amazon.com/images/I/814thy9RpBL._SL1500_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "THE LAST OF HER KIND",
+      "description": "The paths of two women from different walks of life intersect amid counterculture of the 1960s in this haunting and provocative novel from the National Book Award-winning author of The Friend It is Columbia University, 1968. Ann Drayton and Georgette George meet as roommates on the first night....",
+      "price": 524,
+      "category": "novel",
+      "author": "Boston Globe",
+      "thumbnail": "https://m.media-amazon.com/images/I/51VQJePlx+L._SY445_SX342_.jpg"
+    }
+  ]
+}

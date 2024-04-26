@@ -7,6 +7,7 @@ import {
   updateTotal,
 } from "../Redux/Reducers/Cart";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const dispatcher = useDispatch();
@@ -33,6 +34,9 @@ function Cart() {
 
   return (
     <div className="container">
+      <Link to="/">
+<button className="btn btn-dark" >back</button>
+      </Link>
       <div className="cart-items-container py-5 divider">
         {items.map((item, index) => (
           <CartCard

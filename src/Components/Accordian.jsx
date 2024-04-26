@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import   { useState } from "react";
 import {
   Accordion,
   AccordionBody,
   AccordionHeader,
   AccordionItem,
 } from "reactstrap";
+import PropTypes from "prop-types";
 
 function Accordian({ options = [] }) {
-  const [open, setOpen] = useState("1");
+  const [open, setOpen] = useState("1"); // Initialize with string "1"
   const toggle = (id) => {
-    if (open === id) {
-      setOpen();
-    } else {
-      setOpen(id);
-    }
+    setOpen(open === id ? null : id); // Toggle between id and null
   };
 
   return (
@@ -21,8 +18,10 @@ function Accordian({ options = [] }) {
       <Accordion open={open} toggle={toggle}>
         {options.map((option, index) => (
           <AccordionItem key={`${option.title}-${index}`}>
-            <AccordionHeader targetId={index}>{option.title}</AccordionHeader>
-            <AccordionBody accordionId={index}>
+            <AccordionHeader targetId={index.toString()}>{/* Convert to string */}
+              {option.title}
+            </AccordionHeader>
+            <AccordionBody accordionId={index.toString()}>{/* Convert to string */}
               {option.description}
             </AccordionBody>
           </AccordionItem>
@@ -31,5 +30,14 @@ function Accordian({ options = [] }) {
     </div>
   );
 }
+
+Accordian.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default Accordian;

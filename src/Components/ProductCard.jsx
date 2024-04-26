@@ -14,14 +14,19 @@ export default function ProductCard({
         <CardSubtitle tag="h6" className="mb-2 text-muted">{data.category}</CardSubtitle>
         <p className="mb-2"><i>{data.author}</i></p>
         <div className="d-flex justify-content-between align-items-center mb-2">
+          <div>
           <h4>${data.price}</h4>
+
+          </div>
+          <div>
           <Button
             disabled={isAddedToCart}
-            color="primary"
+            color="dark"
             onClick={() => addToCart({ ...data, quantity: 1 })}
           >
             {isAddedToCart ? "Added" : "Add to Cart"}
           </Button>
+          </div>
         </div>
       </CardBody>
     </Card>

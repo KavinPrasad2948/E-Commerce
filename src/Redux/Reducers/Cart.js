@@ -1,46 +1,51 @@
+// Import necessary modules
 import { createSlice } from "@reduxjs/toolkit";
 
-const CartSlice = createSlice({
-  name: "Cart",
+// Create a slice for the cart
+const cartSlice = createSlice({
+  name: "cart",
   initialState: {
     items: [],
     subTotal: 0,
     total: 0,
   },
   reducers: {
+   
     addItemToCart: (state, action) => {
       state.items.push(action.payload);
     },
+    // Reducer for removing an item from the cart
+    removeItemFromCart: (state, action) => {
+      const itemIdToRemove = action.payload;
+      state.items = state.items.filter(item => item.id !== itemIdToRemove); 
+      console.log("Removing item from cart:", state.items); 
+    },
+    // Reducer for changing the quantity of an item in the cart
     quantityChange: (state, action) => {
-      return {
-        ...state,
-        items: state.items.map((item) => {
-          if (item.id !== action.payload.id) {
-            return item;
-          }
-
-          return {
-            ...item,
-            quantity: action.payload.value,
-          };
-        }),
-      };
+      const { id, value } = action.payload;
+      const itemToUpdate = state.items.find(item => item.id === id);
+      if (itemToUpdate) {
+        itemToUpdate.quantity = value;
+      }
     },
+    // Reducer for updating the subtotal of the cart
     updateSubTotal: (state, action) => {
-      return {
-        ...state,
-        subTotal: action.payload,
-      };
+      state.subTotal = action.payload;
     },
+    // Reducer for updating the total of the cart
     updateTotal: (state, action) => {
-      return {
-        ...state,
-        total: action.payload,
-      };
+      state.total = action.payload;
     },
   },
 });
 
-export const { addItemToCart, quantityChange, updateSubTotal, updateTotal } =
-  CartSlice.actions;
-export default CartSlice.reducer;
+// Export action creators and reducer
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  quantityChange,
+  updateSubTotal,
+  updateTotal
+} = cartSlice.actions;
+
+export default cartSlice.reducer;
